@@ -1,5 +1,9 @@
 # dplyr (development version)
 
+* Joins better handle key columns will all `NA`s (#6804).
+
+# dplyr 1.1.1
+
 * Mutating joins now warn about multiple matches much less often. At a high
   level, a warning was previously being thrown when a one-to-many or
   many-to-many relationship was detected between the keys of `x` and `y`, but is
@@ -65,6 +69,9 @@
   `na_rm` or `with_ties` (#6725).
 
 * `nth()` now errors informatively if `n` is `NA` (#6682).
+
+* Joins now throw a more informative error when `y` doesn't have the same
+  source as `x` (#6798).
   
 * All major dplyr verbs now throw an informative error message if the input
   data frame contains a column named `NA` or `""` (#6758).
